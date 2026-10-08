@@ -1,0 +1,36 @@
+/* Ocultar la flecha por defecto nativa en webkit/firefox */
+.sw-accordion-summary {
+    list-style: none; /* Firefox */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.sw-accordion-summary::-webkit-details-marker {
+    display: none; /* Chrome/Safari */
+}
+
+.sw-accordion-item {
+    margin-bottom: 0.5rem;
+}
+
+/* Espaciado del contenido y respeto de tipografía */
+.sw-accordion-content {
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Rotación del icono usando CSS puro cuando <details> tiene el atributo 'open' */
+.sw-accordion-icon {
+    transition: transform 0.3s ease;
+}
+.sw-accordion-item[open] .sw-accordion-icon {
+    transform: rotate(180deg);
+}
